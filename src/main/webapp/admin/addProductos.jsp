@@ -54,8 +54,8 @@ a:hover{
 								<select id="inputState" name="categoria" class="form-control">
 								<option selected>--seleccione--</option>
 								<option value="Zapatilla">Zapatilla</option>
-								<option value="Remeras">Remeras</option>
-								<option value="Pantalones">Pantalones</option>
+								<option value="Remera">Remera</option>
+								<option value="Pantalon">Pantalon</option>
 								</select>
 							</div>
 							<div class="form-group">

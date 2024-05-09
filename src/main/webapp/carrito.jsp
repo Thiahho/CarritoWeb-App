@@ -1,3 +1,5 @@
+<%@page import="adminServlet.DeleteUsuarioServlet"%>
+<%@page import="dao.UsuarioDaoImp"%>
 <%@page import="java.util.List"%>
 <%@page import="modelos.Carrito"%>
 <%@page import="modelos.Usuario"%>
@@ -97,38 +99,8 @@
 				<div class="card">
 					<div class="card-body">
 					<h3 class="text-center text-success">Detalles</h3>
-						 <%-- <form action="pedido" method="post">
-						
-						<input type="hidden" value="${userobj.idusuario}" name=idusuario>
-						<input type="hidden" value="${userobj.dinero}" name=dinero>
-						<input type="hidden" value="<%=preciototal%>" name=idusuario>
-						
-						 <div class="form-row">
-						    <div class="form-group col-md-6">
-						      <label for="nombre">Nombre</label>
-						      <input type="text" class="form-control" id="unombre" name="unombre" value="${userobj.nombre}" required>
-						    </div>
-						    <div class="form-group col-md-6">
-						      <label for="email">Email</label>
-						      <input type="email" class="form-control" id="uemail" name="uemail"value="${userobj.email}" required>
-						    </div>
-						  </div>
-						 
-						    <div class="form-row">
-						    <div class="form-group col-md-12">
-						      <label for="direccion">Direccion</label>
-						      <input type="text" class="form-control" name="udireccion" value="${userobj.direccion }">
-						    </div>
-						  </div>
-						  
-						
-						  <div class="text-center">
-						  <input type="text" name="preciototal" value="<%=preciototal%>">
-						  	<button class="btn btn-warning">Pagar</button>
-						  	<a href="index.jsp" class="btn btn-success">Continuar Compra </a	>
-						  </div>
-						  
-						</form>  --%>
+				
+				
 						<form action="pedido" method="post">
 						    <input type="hidden" value="${userobj.idusuario}" name="idusuario">
 						    <input type="hidden" value="${userobj.dinero}" name="dinero">
@@ -155,7 +127,7 @@
 						  
 						    <!-- Campo para el total del pedido -->
 						    <input type="hidden" name="preciototal" value="<%=preciototal%>">
-						
+					
 						    <!-- Botones para enviar el formulario y continuar comprando -->
 						    <div class="text-center">
 						        <button type="submit" class="btn btn-warning">Pagar</button>

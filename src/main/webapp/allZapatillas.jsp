@@ -67,7 +67,7 @@ to{
 	 <%
 		Usuario usuario= (Usuario)session.getAttribute("userobj");
 	%>
-	<%-- <c:choose>
+<c:choose>
     <c:when test="${requestScope.adminLoggedIn eq true}">
         <%@include file="../componentes/navbaradmin.jsp" %>
     </c:when>
@@ -75,34 +75,7 @@ to{
         <%@include file="../componentes/navbar.jsp" %>
     </c:otherwise>
 </c:choose>
-	<c:if test="${not empty addCarrito}">
-		
-		<div id="toast"> ${addCarrito} </div>
-		
-		<script type="text/javascript">
-			showToast();
-			function showToast(content){
-				$('#toast').addClass("display");
-				$('#toast').html(content);
-				setTimeout(()=>{
-					$("#toast").removeClass("display");
-				},2000)
-			}
-		</script>
-		
-	<c:remove var="addCarrito" scope="session"/>			
-		
-	</c:if> --%><c:choose>
-    <c:when test="${requestScope.adminLoggedIn eq true}">
-        <%@include file="../componentes/navbaradmin.jsp" %>
-    </c:when>
-    <c:otherwise>
-        <%@include file="../componentes/navbar.jsp" %>
-    </c:otherwise>
-</c:choose>
-	<%-- <c:if test="${empty userobj }">
-		<c:redirect url="../login.jsp"></c:redirect>
-	</c:if> --%>
+
 	<c:if test="${empty userobj }">
 	    <c:set var="addToCartUrl" value="login.jsp"/>
 	</c:if>

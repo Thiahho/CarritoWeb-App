@@ -28,11 +28,17 @@ public class NavbarFilter implements Filter {
         chain.doFilter(request, response);
     }
 
-    public void init(FilterConfig fConfig) throws ServletException {
-        // Método init requerido por la interfaz Filter
-    }
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// TODO Auto-generated method stub
+		
+	}
 
-    public void destroy() {
-        // Método destroy requerido por la interfaz Filter
-    }
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+
+   
 }

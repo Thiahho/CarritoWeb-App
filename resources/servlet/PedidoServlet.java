@@ -27,62 +27,6 @@ import modelos.Usuario;
 @WebServlet("/pedido")
 public class PedidoServlet extends HttpServlet{
 
-	/*
-	 * @Override protected void doPost(HttpServletRequest request,
-	 * HttpServletResponse response) throws ServletException, IOException { try {
-	 * HttpSession session= request.getSession();
-	 * 
-	 * int idusuario= Integer.parseInt(request.getParameter("idusuario")); String
-	 * unombre=request.getParameter("unombre"); String
-	 * uemail=request.getParameter("uemail"); String
-	 * udireccion=request.getParameter("udireccion"); String
-	 * pnombre=request.getParameter("pnombre"); String
-	 * pcategoria=request.getParameter("pcategoria"); String
-	 * pprecio=request.getParameter("pprecio"); String
-	 * metodopago=request.getParameter("metodopago"); String
-	 * estado=request.getParameter("estado");
-	 * 
-	 * String fullAdd=udireccion +","+uemail;
-	 * 
-	 * //System.out.println(unombre+ " " + uemail+ " " +fullAdd+" "+ metodopago);
-	 * 
-	 * CarritoDaoImp dao = new CarritoDaoImp(DBConexion.getConnection());
-	 * List<Carrito> plista=dao.getProductoByUsuario(idusuario);
-	 * 
-	 * 
-	 * if(plista.isEmpty()) { session.setAttribute("failedsMsg",
-	 * "Agregue un producto!"); response.sendRedirect("carrito.jsp");
-	 * 
-	 * }else {
-	 * 
-	 * 
-	 * PedidoDaoImp dao2= new PedidoDaoImp(DBConexion.getConnection()); Pedido ped=
-	 * null; //int i=dao2.getPedidoNum();
-	 * 
-	 * 
-	 * ArrayList<Pedido> pedidoList= new ArrayList<Pedido>(); Random random= new
-	 * Random(); for(Carrito car:plista) { ped= new Pedido();
-	 * ped.setIdpedido("PROD-ID-00"+ random.nextInt(1000)); ped.setUnombre(unombre);
-	 * ped.setUemail(uemail); ped.setUdireccion(udireccion);
-	 * ped.setFullAdd(fullAdd); ped.setPnombre(car.getNombre());
-	 * ped.setPcategoria(car.getCategoria()); ped.setPprecio(car.getPrecio()+"");
-	 * ped.setMetodopago(metodopago); pedidoList.add(ped);
-	 * 
-	 * }
-	 * 
-	 * 
-	 * boolean f= dao2.guardarPedido(pedidoList); if(f) {
-	 * response.sendRedirect("pedido_realizado.jsp");
-	 * 
-	 * } else { session.setAttribute("failedsMsg", "Error al cargar el pedido!");
-	 * response.sendRedirect("carrito.jsp"); }
-	 * 
-	 * 
-	 * } } catch (Exception e) { e.printStackTrace(); }
-	 * 
-	 * 
-	 * }
-	 */
 	
 	 @Override
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response)

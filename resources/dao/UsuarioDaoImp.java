@@ -93,6 +93,7 @@ public class UsuarioDaoImp implements UsuarioDao {
 				us.setEmail(rs.getString(3));
 				us.setDireccion(rs.getString(4));
 				us.setPassword(rs.getString(5));
+				us.setDinero(rs.getDouble(6));
 			}
 			
 		} catch (Exception e) {
@@ -103,25 +104,17 @@ public class UsuarioDaoImp implements UsuarioDao {
 	}
 
 
-	@Override
-	public boolean verificarPass(int idusuario,String password) {
-		boolean f= true;
-		
-		try {
-			String sql="select password from usuario where idusuario=?";
-			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setInt(1, idusuario);
-			ps.setString(2, password);
-			ResultSet rs= ps.executeQuery();
-			
-			while(rs.next()) {
-				f=false;	
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return f;
-	}
+	/*
+	 * @Override public boolean verificarPass(int idusuario,String password) {
+	 * boolean f= true;
+	 * 
+	 * try { String sql="select password from usuario where idusuario=?";
+	 * PreparedStatement ps= con.prepareStatement(sql); ps.setInt(1, idusuario);
+	 * ps.setString(2, password); ResultSet rs= ps.executeQuery();
+	 * 
+	 * while(rs.next()) { f=false; } } catch (Exception e) { e.printStackTrace(); }
+	 * return f; }
+	 */
 
 
 	@Override

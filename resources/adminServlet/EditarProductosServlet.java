@@ -79,19 +79,6 @@ public class EditarProductosServlet extends HttpServlet{
 	    }
 	}
 
-	/*
-	 * private String obtenerNombreArchivo(Part part) { // Obtener el nombre del
-	 * archivo de la cabecera de la parte String contentDisp =
-	 * part.getHeader("content-disposition"); String[] tokens =
-	 * contentDisp.split(";"); for (String token : tokens) { if
-	 * (token.trim().startsWith("filename")) { return
-	 * token.substring(token.indexOf("=") + 2, token.length() - 1); } } return ""; }
-	 * 
-	 * private void guardarArchivo(Part part, String fileName) throws IOException {
-	 * // Guardar el archivo en una ubicación específica en el servidor String
-	 * savePath = "D:\\Eclipse\\ShopC-App\\src\\main\\webapp\\img"; File fileSaveDir
-	 * = new File(savePath); if (!fileSaveDir.exists()) { fileSaveDir.mkdirs(); }
-	 * part.write(savePath + File.separator + fileName); }
-	 */
+	
 	
 }

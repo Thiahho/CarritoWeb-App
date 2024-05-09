@@ -48,25 +48,26 @@ a:hover{
 		</c:if>		
 						
 	<table class="table table-striped">
-  <thead class="bg-primary text-white">
-    <tr>
-    
-      <th scope="col">ID</th>
-      <th scope="col">Imagen</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Categoria</th>
-      <th scope="col">Stock</th>
-      <th scope="col">Precio</th>  
-      <th scope="col">Accion</th>
-    </tr>
-  </thead>
+	  <thead class="bg-primary text-white">
+	    <tr>
+	    
+	      <th scope="col">ID</th>
+	      <th scope="col">Imagen</th>
+	      <th scope="col">Nombre</th>
+	      <th scope="col">Categoria</th>
+	      <th scope="col">Stock</th>
+	      <th scope="col">Precio</th>  
+	      <th scope="col">Accion</th>
+	    </tr>
+	  </thead>
   <tbody>
   	
 	<%
 		ProductoDaoImp dao= new ProductoDaoImp(DBConexion.getConnection());
 		List<Producto> list= dao.getAllProductos();
 		for(Producto prod:list)
-		{%>
+		{
+	%>
 	<tr>
       <td><%=prod.getIdprod()%></td>
       <td><img src="../img/<%=prod.getImagen()%>" style="width: 50px; height: 50px;"></td>

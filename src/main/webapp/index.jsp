@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Shop Cart</title>
+<title>SHOPC</title>
 <%@include file="componentes/css.jsp"%>
 
 <style type="text/css">

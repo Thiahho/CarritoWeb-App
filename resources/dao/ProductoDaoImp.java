@@ -144,22 +144,19 @@ public class ProductoDaoImp implements ProductoDao{
 
 
 
-
-	
-
 	@Override
-	public List<Producto> getByZapatillas() {
+	public List<Producto> getByRemeras() {
 		List<Producto> list= new ArrayList<Producto>();
 		
 		Producto prod= null;
 		try {
 			String sql="select * from productos where categoria=? order by idprod desc";
 			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setString(1, "Zapatilla");
+			ps.setString(1, "Remera");
 		
 			ResultSet rs = ps.executeQuery();
 			int i =1;
-			while(rs.next() && i<4) {
+			while(rs.next() && i<5) {
 				prod= new Producto();
 				prod.setIdprod(rs.getInt(1));
 				prod.setNombre(rs.getString(2));
@@ -177,19 +174,22 @@ public class ProductoDaoImp implements ProductoDao{
 		return list;
 	}
 
+
+	
+
 	@Override
-	public List<Producto> getByRemeras() {
+	public List<Producto> getByZapatillas() {
 		List<Producto> list= new ArrayList<Producto>();
 		
 		Producto prod= null;
 		try {
 			String sql="select * from productos where categoria=? order by idprod desc";
 			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setString(1, "Remeras");
+			ps.setString(1, "Zapatilla");
 		
 			ResultSet rs = ps.executeQuery();
 			int i =1;
-			while(rs.next() && i<4) {
+			while(rs.next() && i<5) {
 				prod= new Producto();
 				prod.setIdprod(rs.getInt(1));
 				prod.setNombre(rs.getString(2));
@@ -215,7 +215,7 @@ public class ProductoDaoImp implements ProductoDao{
 		try {
 			String sql="select * from productos where categoria=? order by idprod desc";
 			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setString(1, "Pantalones");
+			ps.setString(1, "Pantalon");
 		
 			ResultSet rs = ps.executeQuery();
 			
@@ -245,7 +245,7 @@ public class ProductoDaoImp implements ProductoDao{
 		try {
 			String sql="select * from productos where categoria=? order by idprod desc";
 			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setString(1, "Remeras");
+			ps.setString(1, "Remera");
 		
 			ResultSet rs = ps.executeQuery();
 			
@@ -305,11 +305,11 @@ public class ProductoDaoImp implements ProductoDao{
 		try {
 			String sql="select * from productos where categoria=? order by idprod desc";
 			PreparedStatement ps= con.prepareStatement(sql);
-			ps.setString(1, "Pantalones");
+			ps.setString(1, "Pantalon");
 		
 			ResultSet rs = ps.executeQuery();
 			int i =1;
-			while(rs.next() && i<4) {
+			while(rs.next() && i<5) {
 				prod= new Producto();
 				prod.setIdprod(rs.getInt(1));
 				prod.setNombre(rs.getString(2));

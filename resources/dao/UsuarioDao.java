@@ -10,7 +10,7 @@ public interface UsuarioDao{
 	
 	public Usuario login(String email, String password);
 	
-	public boolean verificarPass(int idusuario,String password); 
+	//public boolean verificarPass(int idusuario,String password); 
 	public boolean updatePerfil(Usuario usuario);
 	
 	public boolean verificarUsuario(String email);

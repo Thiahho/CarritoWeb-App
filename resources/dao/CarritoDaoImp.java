@@ -1,6 +1,5 @@
 package dao;
 
-import java.awt.desktop.AppReopenedEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,16 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelos.Carrito;
-import modelos.Producto;
 
 public class CarritoDaoImp implements CarritoDao{
 
 	private Connection con;
 	
+	
 	public CarritoDaoImp(Connection con) {
 		super();
 		this.con = con;
 	}
+
 
 	@Override
 	public boolean addCarrito(Carrito carrito) {
@@ -46,15 +46,7 @@ public class CarritoDaoImp implements CarritoDao{
 	}
 	
 	
-	/*
-	 * public double obtenerDineroDisponibleUsuario(int idUsuario) { double
-	 * dineroDisponible = 0; try { String sql =
-	 * "SELECT dinero FROM shopc.usuario WHERE idusuario = ?"; PreparedStatement ps
-	 * = con.prepareStatement(sql); ps.setInt(1, idUsuario); ResultSet rs =
-	 * ps.executeQuery(); if (rs.next()) { dineroDisponible =
-	 * rs.getDouble("dinero"); } } catch (Exception e) { e.printStackTrace(); }
-	 * return dineroDisponible; }
-	 */
+
 
 	@Override
 	public List<Carrito> getProductoByUsuario(int idusuario) {
@@ -134,7 +126,7 @@ public class CarritoDaoImp implements CarritoDao{
 		boolean f= false;
 		
 		try {
-			String sql = "update usuario set estado='PAGADO' WHERE idusuario=?";
+			String sql = "update carrito set estado='PAGADO' WHERE idusuario=?";
     	 	PreparedStatement ps = con.prepareStatement(sql);
     	 	ps.setString(1, carrito.getEstado());
     	 	ps.setInt(2, carrito.getIdusuario());

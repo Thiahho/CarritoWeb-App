@@ -63,7 +63,7 @@ a:hover{
 						        <% if("Remera".equals(prod.getCategoria())) { %>
 						            <option value="Remera" selected>Remera</option>
 						        <% } else { %>
-						            <option value="Remera">Remera</option>
+						            <option value="Remera">Remeras</option>
 						        <% } %>
 						
 						        <% if("Pantalon".equals(prod.getCategoria())) { %>

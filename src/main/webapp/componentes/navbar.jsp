@@ -1,3 +1,4 @@
+<%@page import="modelos.Usuario"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <%@page isELIgnored="false" %>
 <div class="container-fluid" style="heaigth:10px; background-color:#303f9f; "></div>
@@ -14,12 +15,14 @@
 		    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
 		  </form>
 		</div>
+		
 		<c:if test="${not empty userobj }">
 			<div class="col-md-3">
 			
 			<a href="carrito.jsp" ><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
 			
-				<a href="admin/home.jsp" class="btn btn-success"><i class="fa-solid fa-user"></i> ${userobj.nombre}</a>
+				<a href="./perfil.jsp" class="btn btn-success"><i class="fa-solid fa-user"></i> ${userobj.nombre}</a>
+				<a class="btn btn-success"><i class="fa-solid fa-dollar-sign"></i> ${userobj.dinero}</a>
 				<a href="logout" class="btn btn-primary"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a>
 			</div>
 		

@@ -25,4 +25,6 @@ public interface ProductoDao {
 	public List<Producto> getAllZapatillas();
 	
 	public List<Producto> busquedaProducto(String search);
+	
+	
 }
