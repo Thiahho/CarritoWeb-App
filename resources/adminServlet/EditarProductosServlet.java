@@ -38,10 +38,7 @@ public class EditarProductosServlet extends HttpServlet{
 	        if (idprodParam ==null || idprodParam.isEmpty() ||idprod ==0 || nombre == null || nombre.isEmpty() || stock == null || stock.isEmpty() || precio == null || precio.isEmpty()) {
 	            throw new IllegalArgumentException("Los campos nombre, stock y precio son obligatorios.");
 	        }
-			/*
-			 * if(part!=null && part.getSize()>0) { String fileName=
-			 * obtenerNombreArchivo(part); guardarArchivo(part, fileName); file=fileName; }
-			 */
+		
 	        Producto prod = new Producto(); 
 	        prod.setIdprod(idprod);
 	        prod.setNombre(nombre); 

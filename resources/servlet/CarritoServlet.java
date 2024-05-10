@@ -21,20 +21,7 @@ import modelos.Usuario;
 @WebServlet("/carrito")
 public class CarritoServlet extends HttpServlet{
 
-	/*
-	 * @Override protected void doPost(HttpServletRequest request,
-	 * HttpServletResponse response) throws ServletException, IOException {
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
 
-
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	
@@ -80,82 +67,4 @@ public class CarritoServlet extends HttpServlet{
 	
 }
 	  
-	 
-		/*
-		 * protected double obtenerDineroDisponibleUsuario(HttpServletRequest request,
-		 * int idUsuario) { double dineroDisponible = 0; try { HttpSession session =
-		 * request.getSession(); Usuario usuario = (Usuario)
-		 * session.getAttribute("userobj"); dineroDisponible = usuario.getDinero(); }
-		 * catch (Exception e) { e.printStackTrace(); } return dineroDisponible; }
-		 */
-
-
-	/*
-	 * @Override protected void doPost(HttpServletRequest request,
-	 * HttpServletResponse response) throws ServletException, IOException { try { //
-	 * Obtener datos del formulario de pago int idUsuario =
-	 * Integer.parseInt(request.getParameter("idusuario")); double precioTotal =
-	 * Double.parseDouble(request.getParameter("preciototal")); String metodoPago =
-	 * request.getParameter("metodopago");
-	 * 
-	 * // Verificar si el método de pago es EFECTIVO if
-	 * ("EFECTIVO".equals(metodoPago)) { // Obtener dinero disponible del usuario
-	 * double dineroDisponible = obtenerDineroDisponibleUsuario(request, idUsuario);
-	 * 
-	 * // Verificar si el usuario tiene suficiente dinero if (dineroDisponible >=
-	 * precioTotal) { // Generar el pedido y realizar las operaciones necesarias //
-	 * ...
-	 * 
-	 * // Redirigir a una página de confirmación de pedido exitoso
-	 * response.sendRedirect("pedidoExitoso.jsp"); } else { // Mostrar un mensaje de
-	 * error al usuario indicando que no tiene suficiente dinero
-	 * request.setAttribute("errorMsg",
-	 * "No tienes suficiente dinero para pagar el pedido."); RequestDispatcher
-	 * dispatcher = request.getRequestDispatcher("formularioPago.jsp");
-	 * dispatcher.forward(request, response); } } else { // Mostrar un mensaje de
-	 * error al usuario indicando que debe seleccionar un método de pago válido
-	 * request.setAttribute("errorMsg",
-	 * "Por favor selecciona un método de pago válido."); RequestDispatcher
-	 * dispatcher = request.getRequestDispatcher("formularioPago.jsp");
-	 * dispatcher.forward(request, response); } } catch (Exception e) {
-	 * e.printStackTrace(); // Manejo de excepciones } }
-	 */
-
-	/*
-	 * @Override protected void doPost(HttpServletRequest request,
-	 * HttpServletResponse response) throws ServletException, IOException { try { //
-	 * Obtener datos del formulario de pago int idUsuario =
-	 * Integer.parseInt(request.getParameter("idusuario")); double precioTotal =
-	 * Double.parseDouble(request.getParameter("preciototal"));
-	 * 
-	 * // Obtener dinero disponible del usuario double dineroDisponible =
-	 * obtenerDineroDisponibleUsuario(idUsuario);
-	 * 
-	 * // Verificar si el usuario tiene suficiente dinero if (dineroDisponible >=
-	 * precioTotal) { // Calcular el nuevo dinero disponible después de la compra
-	 * double nuevoDineroDisponible = dineroDisponible - precioTotal;
-	 * 
-	 * // Actualizar el dinero disponible del usuario en la base de datos
-	 * actualizarDineroUsuario(idUsuario, nuevoDineroDisponible);
-	 * 
-	 * // Generar el pedido y realizar otras operaciones necesarias // ...
-	 * 
-	 * // Redirigir a una página de confirmación de pedido exitoso
-	 * response.sendRedirect("pedidoExitoso.jsp"); } else { // Mostrar un mensaje de
-	 * error al usuario indicando que no tiene suficiente dinero
-	 * request.setAttribute("errorMsg",
-	 * "No tienes suficiente dinero para pagar el pedido."); RequestDispatcher
-	 * dispatcher = request.getRequestDispatcher("formularioPago.jsp");
-	 * dispatcher.forward(request, response); } } catch (Exception e) {
-	 * e.printStackTrace(); // Manejo de excepciones } }
-	 * 
-	 * // Método para actualizar el dinero disponible del usuario en la base de
-	 * datos private void actualizarDineroUsuario(int idUsuario, double nuevoDinero)
-	 * { try { // Aquí deberías ejecutar una consulta SQL para actualizar el dinero
-	 * disponible del usuario // Supongamos que tienes un método en tu DAO para
-	 * actualizar el dinero del usuario UsuarioDaoImp dao = new
-	 * UsuarioDaoImp(DBConexion.getConnection());
-	 * dao.actualizarDineroUsuario(idUsuario, nuevoDinero); } catch (Exception e) {
-	 * e.printStackTrace(); } }
-	 */
-
+	

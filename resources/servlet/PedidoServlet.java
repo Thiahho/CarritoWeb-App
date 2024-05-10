@@ -41,21 +41,21 @@ public class PedidoServlet extends HttpServlet{
 	            String pprecio = request.getParameter("preciototal");
 	            //String metodopago = request.getParameter("metodopago");
 
-	            // Obtener el dinero disponible del usuario desde la base de datos
+	            // Obtengo el dinero disponible del usuario desde la base de datos
 	            UsuarioDaoImp usuarioDao = new UsuarioDaoImp(DBConexion.getConnection());
 	            Usuario usuario = usuarioDao.getUsuarioById(idusuario);
 	            double dineroDisponible = usuario.getDinero();
 
-	            // Verificar si el usuario tiene suficiente dinero para realizar la compra
+	            // valida si el usuario tiene suficiente dinero para realizar la compra
 	            double totalPrecio = Double.parseDouble(pprecio);
 	            if (dineroDisponible >= totalPrecio) {
-	                // Realizar la resta del total del precio al dinero disponible
+	                // resta del total del precio al dinero disponible
 	                double nuevoDineroDisponible = dineroDisponible - totalPrecio;
 
-	                // Actualizar el dinero del usuario en la base de datos
+	                // actualiza el valor del dinero del usuario en la base de datos
 	                boolean actualizacionExitosa = usuarioDao.actualizarDineroUsuario(idusuario, nuevoDineroDisponible);
 	                if (actualizacionExitosa) {
-	                    // Generar el pedido y realizar otras operaciones necesarias
+	                    // carga el pedido 
 	                    CarritoDaoImp carritoDao = new CarritoDaoImp(DBConexion.getConnection());
 	                    List<Carrito> carritoList = carritoDao.getProductoByUsuario(idusuario);
 
@@ -77,7 +77,7 @@ public class PedidoServlet extends HttpServlet{
 	                    PedidoDaoImp pedidoDao = new PedidoDaoImp(DBConexion.getConnection());
 	                    boolean pedidoGuardado = pedidoDao.guardarPedido(pedidoList);
 	                    if (pedidoGuardado) {
-	                        // Limpiar el carrito después de realizar el pedido
+	                        // limpia el carrito después de realizar el pedido
 	                        carritoDao.limpiarCarrito(idusuario);
 	                        response.sendRedirect("pedido_realizado.jsp");
 	                    } else {
@@ -89,7 +89,7 @@ public class PedidoServlet extends HttpServlet{
 	                    response.sendRedirect("carrito.jsp");
 	                }
 	            } else {
-	                // Mostrar un mensaje de que el usuario no tiene suficiente dinero para realizar la compra
+	              
 	                session.setAttribute("failedsMsg", "No tienes suficiente dinero para realizar la compra. Por favor, carga más dinero.");
 	                response.sendRedirect("carrito.jsp");
 	            }
